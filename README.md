@@ -4,6 +4,7 @@
 
 - [How to Install and Use](#how-to-install-and-use)
 - [List](#list)
+  - [More Game More Waifu](#more-game-more-waifu)
 
 ## How to Install and Use
 
@@ -13,3 +14,7 @@
 Some styles include configurable CSS options. To access them, click the ![stylus](stylus-icon-16.webp) icon (or go to the **Manage** dashboard); a gear icon next to the style name indicates that customizable options are available.
 
 ## List
+
+### More Game More Waifu
+
+[Details](./More%20Game%20More%20Waifu/README.md)

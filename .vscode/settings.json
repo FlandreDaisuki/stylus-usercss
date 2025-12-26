@@ -1,0 +1,16 @@
+{
+  "css.validate": false,
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  },
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "markdown.extension.toc.levels": "2..6"
+}

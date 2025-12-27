@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.1
+@version        1.0.2
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @preprocessor stylus
@@ -49,7 +49,7 @@
     }
 
     if (highlightPurchased) {
-      tr:not(:has(a.btn_cart)) a.work_thumb_box {
+      tr:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_box {
         position: relative;
         overflow: hidden;
 
@@ -79,7 +79,8 @@
 
     if (streamingMode) {
       tr:has(a.btn_cart) a.work_thumb_box::after,
-      tr:not(:has(a.btn_cart)) a.work_thumb_box:hover::after {
+      tr:has(a.btn_cart_in) a.work_thumb_box::after,
+      tr:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_box:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;
@@ -128,6 +129,8 @@
 
         /* discount labels */
         dl.work_img_main {
+          height: 100%;
+
           dd.work_deals.work_labels {
             padding: 8px 0;
             display: grid;
@@ -197,7 +200,7 @@
     }
 
     if (highlightPurchased) {
-      li.search_result_img_box_inner:not(:has(a.btn_cart)) a.work_thumb_inner {
+      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner {
         position: relative;
         overflow: hidden;
 
@@ -227,7 +230,9 @@
 
 
     if (streamingMode) {
-      a.work_thumb_inner::after {
+      li.search_result_img_box_inner:has(a.btn_cart) a.work_thumb_inner::after,
+      li.search_result_img_box_inner:has(a.btn_cart_in) a.work_thumb_inner::after,
+      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;
@@ -256,6 +261,7 @@
 
         dl.work_img_main {
           height: 100%;
+
           dd.work_deals.work_labels {
             padding-top: 8px;
             padding-bottom: 4px;
@@ -288,7 +294,7 @@
 
 
     if (highlightPurchased) {
-      li.search_result_img_box_inner:not(:has(a.btn_cart)) dt.search_img.work_thumb > a {
+      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) dt.search_img.work_thumb > a {
         position: relative;
         overflow: hidden;
 
@@ -317,7 +323,9 @@
     }
 
     if (streamingMode) {
-      dt.search_img.work_thumb > a::after {
+      li.search_result_img_box_inner:has(a.btn_cart) dt.search_img.work_thumb > a::after,
+      li.search_result_img_box_inner:has(a.btn_cart_in) dt.search_img.work_thumb > a::after,
+      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) dt.search_img.work_thumb > a:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;
@@ -356,6 +364,7 @@
   /* #endregion Page: wishlist */
 
 
+  /* #region i18n */
   html:lang(ja) {
     --label-item-purchased: '買いました';
     --label-items-all-purchased: '全部購入しました';
@@ -425,4 +434,5 @@
     --label-item-purchased: 'Đã mua';
     --label-items-all-purchased: 'Đã mua tất cả';
   }
+  /* #endregion i18n */
 }

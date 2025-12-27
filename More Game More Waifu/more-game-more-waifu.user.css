@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.0
+@version        1.0.1
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @preprocessor stylus
 @var checkbox highlightFavorite  "強調關注" 1
 @var checkbox highlightDiscount  "強調折扣" 1
-@var checkbox highlightpurchased "強調已買" 1
+@var checkbox highlightPurchased "強調已買" 1
 @var checkbox fadeAnimation      "淡化動畫" 0
 @var checkbox streamingMode      "實況模式" 0
 ==/UserStyle== */
@@ -48,7 +48,7 @@
       }
     }
 
-    if (highlightpurchased) {
+    if (highlightPurchased) {
       tr:not(:has(a.btn_cart)) a.work_thumb_box {
         position: relative;
         overflow: hidden;
@@ -67,12 +67,11 @@
             left: 50%;
             font-size: 2rem;
             transform-origin: center center;
-            transform: translate(-50%, -50%) rotate(-10deg);
+            transform: translate(-50%, -50%) rotate(-15deg);
             background-color: #F8F9FA;
             color: #2D3436;
             box-shadow: 0 0 8px gray;
-            width: 240px;
-            padding: 0 48px;
+            padding: 0 60%;
           }
         }
       }
@@ -197,6 +196,36 @@
       }
     }
 
+    if (highlightPurchased) {
+      li.search_result_img_box_inner:not(:has(a.btn_cart)) a.work_thumb_inner {
+        position: relative;
+        overflow: hidden;
+
+        &:not(:hover) {
+          img {
+            opacity: 0.1;
+          }
+
+          &::after {
+            content: var(--label-item-purchased, '買いました');
+            white-space: nowrap;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 2rem;
+            transform-origin: center center;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background-color: #F8F9FA;
+            color: #2D3436;
+            box-shadow: 0 0 8px gray;
+            padding: 0 60%;
+          }
+        }
+      }
+    }
+
+
     if (streamingMode) {
       a.work_thumb_inner::after {
         background: var(--bg-checkerboard);
@@ -254,6 +283,36 @@
         font-size: 1.5rem;
         height: 2rem;
         line-height: 1.8rem;
+      }
+    }
+
+
+    if (highlightPurchased) {
+      li.search_result_img_box_inner:not(:has(a.btn_cart)) dt.search_img.work_thumb > a {
+        position: relative;
+        overflow: hidden;
+
+        &:not(:hover) {
+          img {
+            opacity: 0.1;
+          }
+
+          &::after {
+            content: var(--label-item-purchased, '買いました');
+            white-space: nowrap;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 2rem;
+            transform-origin: center center;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background-color: #F8F9FA;
+            color: #2D3436;
+            box-shadow: 0 0 8px gray;
+            padding: 0 60%;
+          }
+        }
       }
     }
 

@@ -1,9 +1,11 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.2
+@version        1.0.3
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
+@updateURL      https://raw.githubusercontent.com/FlandreDaisuki/stylus-usercss/master/More%20Game%20More%20Waifu/more-game-more-waifu.user.css
+
 @preprocessor stylus
 @var checkbox highlightFavorite  "強調關注" 1
 @var checkbox highlightDiscount  "強調折扣" 1
@@ -65,7 +67,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            font-size: 2rem;
+            font-size: var(--font-size-item-purchased-ranking, 2rem);
             transform-origin: center center;
             transform: translate(-50%, -50%) rotate(-15deg);
             background-color: #F8F9FA;
@@ -96,8 +98,76 @@
   /* #region Page: ranking top */
   /* https://www.dlsite.com/maniax/ranking */
   ul.ranking_top_worklist {
+    if (highlightFavorite) {
+      li.ranking_top_worklist_item:has(a.btn_favorite_in)::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        inset: 0;
+        box-sizing: border-box;
+        pointer-events: none;
+        border: 3px dashed #000;
+      }
+    }
+
+    if (highlightDiscount) {
+      li.ranking_top_worklist_item {
+        height: 170px;
+      }
+
+      dd.work_price_wrap > span.icon_campaign.type_sale {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.2rem;
+        height: 1.5rem;
+      }
+    }
+
+    if (fadeAnimation) {
+      a.work_thumb_inner:has(+ .work_category.type_MOV) {
+        transition: opacity 0.3s;
+        opacity: 0.1;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    if (highlightPurchased) {
+      li.ranking_top_worklist_item:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner {
+        position: relative;
+        overflow: hidden;
+
+        &:not(:hover) {
+          img {
+            opacity: 0.1;
+          }
+
+          &::after {
+            content: var(--label-item-purchased, '買いました');
+            white-space: nowrap;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: var(--font-size-item-purchased-ranking-top, 1.5rem);
+            transform-origin: center center;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background-color: #F8F9FA;
+            color: #2D3436;
+            box-shadow: 0 0 8px gray;
+            padding: 0 60%;
+          }
+        }
+      }
+    }
+
     if (streamingMode) {
-      a.work_thumb_inner::after {
+      li.ranking_top_worklist_item:has(a.btn_cart) a.work_thumb_inner::after,
+      li.ranking_top_worklist_item:has(a.btn_cart_in) a.work_thumb_inner::after,
+      li.ranking_top_worklist_item:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;
@@ -175,6 +245,7 @@
         height: 100%;
         width: 100%;
         position: absolute;
+        inset: 0;
         box-sizing: border-box;
         pointer-events: none;
         border: 3px dashed #000;
@@ -216,7 +287,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            font-size: 2rem;
+            font-size: var(--font-size-item-purchased-search, 2rem);
             transform-origin: center center;
             transform: translate(-50%, -50%) rotate(-15deg);
             background-color: #F8F9FA;
@@ -310,7 +381,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            font-size: 2rem;
+            font-size: var(--font-size-item-purchased-campaign, 2rem);
             transform-origin: center center;
             transform: translate(-50%, -50%) rotate(-15deg);
             background-color: #F8F9FA;

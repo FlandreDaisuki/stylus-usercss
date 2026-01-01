@@ -5,6 +5,7 @@
 - [使用+安裝方法](#使用安裝方法)
 - [列表](#列表)
   - [More Game More Waifu](#more-game-more-waifu)
+  - [FaceBullshit](#facebullshit)
 
 ## 使用+安裝方法
 
@@ -18,3 +19,7 @@
 ### More Game More Waifu
 
 [詳細](./More%20Game%20More%20Waifu/README.zh.md)
+
+### FaceBullshit
+
+[詳細](./FaceBullshit/README.zh.md)

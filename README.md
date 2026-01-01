@@ -5,6 +5,7 @@
 - [How to Install and Use](#how-to-install-and-use)
 - [List](#list)
   - [More Game More Waifu](#more-game-more-waifu)
+  - [FaceBullshit](#facebullshit)
 
 ## How to Install and Use
 
@@ -18,3 +19,7 @@ Some styles include configurable CSS options. To access them, click the ![stylus
 ### More Game More Waifu
 
 [Details](./More%20Game%20More%20Waifu/README.md)
+
+### FaceBullshit
+
+[Details](./FaceBullshit/README.md)

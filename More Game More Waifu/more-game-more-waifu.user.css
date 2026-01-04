@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.3
+@version        1.0.4
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @updateURL      https://raw.githubusercontent.com/FlandreDaisuki/stylus-usercss/master/More%20Game%20More%20Waifu/more-game-more-waifu.user.css
@@ -312,6 +312,11 @@
         opacity: 0.5;
       }
     }
+  }
+
+  /* Fix DLSite not purshased filter */
+  body:has(ul.left_refine_list > li.refine_checkbox.selected > a[data-ga4-ref="not_purchased_filter"]) li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) {
+    display: none;
   }
   /* #endregion Page: search */
 

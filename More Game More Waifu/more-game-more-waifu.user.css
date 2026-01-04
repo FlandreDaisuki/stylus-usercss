@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.5
+@version        1.0.6
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @updateURL      https://raw.githubusercontent.com/FlandreDaisuki/stylus-usercss/master/More%20Game%20More%20Waifu/more-game-more-waifu.user.css
@@ -20,6 +20,53 @@
 
   * {
     user-select: auto !important;
+  }
+
+  /* Fix DLSite floating layout */
+  div#container:has(div#ranking_wrapper):not(:has(div.ranking_top_container)),
+  div#container:has(div#search_result_list),
+  div#container > div.campaign_container,
+  div#container:has(div#wishlist) {
+    --two-column-layout-gap: 15px;
+    --two-column-layout-left-width: 180px;
+    --two-column-layout-side-margin: 15px;
+
+    &:has(div#left.size_left_l) {
+      --two-column-layout-left-width: 250px;
+    }
+
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: var(--two-column-layout-gap);
+
+    & > div {
+      flex: 100%;
+    }
+
+    & > div#left {
+      order: 1;
+      flex: var(--two-column-layout-left-width);
+      margin-left: var(--two-column-layout-side-margin);
+    }
+
+    & > div#wrapper {
+      order: 2;
+      flex: calc(100% - var(--two-column-layout-left-width) - var(--two-column-layout-gap) - 15px * 2);
+      margin: 0 var(--two-column-layout-side-margin) 0 0;
+
+      div#main_inner {
+        margin: 0;
+
+         &:has(div#ranking_wrapper),
+         &:has(div.search_top) {
+          padding-top: 10px;
+        }
+      }
+    }
+
+    & > div#footer {
+      order: 10;
+    }
   }
 
   /* #region Page: ranking */

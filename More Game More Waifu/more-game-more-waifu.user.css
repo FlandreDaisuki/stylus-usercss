@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.4
+@version        1.0.5
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @updateURL      https://raw.githubusercontent.com/FlandreDaisuki/stylus-usercss/master/More%20Game%20More%20Waifu/more-game-more-waifu.user.css
@@ -51,7 +51,7 @@
     }
 
     if (highlightPurchased) {
-      tr:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_box {
+      tr:has(a.btn_dl) a.work_thumb_box {
         position: relative;
         overflow: hidden;
 
@@ -80,9 +80,8 @@
     }
 
     if (streamingMode) {
-      tr:has(a.btn_cart) a.work_thumb_box::after,
-      tr:has(a.btn_cart_in) a.work_thumb_box::after,
-      tr:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_box:hover::after {
+      tr:not(:has(a.btn_dl)) a.work_thumb_box::after,
+      tr:has(a.btn_dl) a.work_thumb_box:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;
@@ -136,7 +135,7 @@
     }
 
     if (highlightPurchased) {
-      li.ranking_top_worklist_item:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner {
+      li.ranking_top_worklist_item:has(a.btn_dl) a.work_thumb_inner {
         position: relative;
         overflow: hidden;
 
@@ -165,9 +164,8 @@
     }
 
     if (streamingMode) {
-      li.ranking_top_worklist_item:has(a.btn_cart) a.work_thumb_inner::after,
-      li.ranking_top_worklist_item:has(a.btn_cart_in) a.work_thumb_inner::after,
-      li.ranking_top_worklist_item:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner:hover::after {
+      li.ranking_top_worklist_item:not(:has(a.btn_dl)) a.work_thumb_inner::after,
+      li.ranking_top_worklist_item:has(a.btn_dl) a.work_thumb_inner:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;
@@ -271,7 +269,7 @@
     }
 
     if (highlightPurchased) {
-      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner {
+      li.search_result_img_box_inner:has(a.btn_dl) a.work_thumb_inner {
         position: relative;
         overflow: hidden;
 
@@ -301,9 +299,8 @@
 
 
     if (streamingMode) {
-      li.search_result_img_box_inner:has(a.btn_cart) a.work_thumb_inner::after,
-      li.search_result_img_box_inner:has(a.btn_cart_in) a.work_thumb_inner::after,
-      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) a.work_thumb_inner:hover::after {
+      li.search_result_img_box_inner:not(:has(a.btn_dl)) a.work_thumb_inner::after,
+      li.search_result_img_box_inner:has(a.btn_dl) a.work_thumb_inner:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;
@@ -370,7 +367,7 @@
 
 
     if (highlightPurchased) {
-      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) dt.search_img.work_thumb > a {
+      li.search_result_img_box_inner:has(a.btn_dl) dt.search_img.work_thumb > a {
         position: relative;
         overflow: hidden;
 
@@ -399,9 +396,8 @@
     }
 
     if (streamingMode) {
-      li.search_result_img_box_inner:has(a.btn_cart) dt.search_img.work_thumb > a::after,
-      li.search_result_img_box_inner:has(a.btn_cart_in) dt.search_img.work_thumb > a::after,
-      li.search_result_img_box_inner:not(:has(a.btn_cart)):not(:has(a.btn_cart_in)) dt.search_img.work_thumb > a:hover::after {
+      li.search_result_img_box_inner:not(:has(a.btn_dl)) dt.search_img.work_thumb > a::after,
+      li.search_result_img_box_inner:has(a.btn_dl) dt.search_img.work_thumb > a:hover::after {
         background: var(--bg-checkerboard);
         content: '';
         display: block;

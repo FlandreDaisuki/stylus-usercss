@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.6
+@version        1.0.7
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @updateURL      https://raw.githubusercontent.com/FlandreDaisuki/stylus-usercss/master/More%20Game%20More%20Waifu/more-game-more-waifu.user.css
@@ -10,7 +10,7 @@
 @var checkbox highlightFavorite  "強調關注" 1
 @var checkbox highlightDiscount  "強調折扣" 1
 @var checkbox highlightPurchased "強調已買" 1
-@var checkbox fadeAnimation      "淡化動畫" 0
+@var checkbox obscureAnimation   "淡化動畫" 0
 @var checkbox streamingMode      "實況模式" 0
 ==/UserStyle== */
 @-moz-document domain("www.dlsite.com") {
@@ -87,12 +87,18 @@
       }
     }
 
-    if (fadeAnimation) {
+    if (obscureAnimation) {
       a.work_thumb_box:has(+ .work_category.type_MOV) {
-        transition: opacity 0.3s;
-        opacity: 0.1;
-        &:hover {
-          opacity: 1;
+        background-color: black;
+
+        & > img {
+          transition: opacity 0.3s;
+          opacity: 0.1;
+
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
@@ -171,12 +177,17 @@
       }
     }
 
-    if (fadeAnimation) {
+    if (obscureAnimation) {
       a.work_thumb_inner:has(+ .work_category.type_MOV) {
-        transition: opacity 0.3s;
-        opacity: 0.1;
-        &:hover {
-          opacity: 1;
+        background-color: black;
+
+        & > img {
+          transition: opacity 0.3s;
+          opacity: 0.1;
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
@@ -297,12 +308,17 @@
       }
     }
 
-    if (fadeAnimation) {
+    if (obscureAnimation) {
       li.search_result_img_box_inner:has(div.work_category.type_MOV) a.work_thumb_inner {
-        transition: opacity 0.3s;
-        opacity: 0.1;
-        &:hover {
-          opacity: 1;
+        background-color: black;
+
+        & > img {
+          transition: opacity 0.3s;
+          opacity: 0.1;
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
@@ -394,12 +410,17 @@
       }
     }
 
-    if (fadeAnimation) {
+    if (obscureAnimation) {
       li.search_result_img_box_inner:has(dd.work_genre > span.icon_MOV) dt.search_img.work_thumb > a {
-        transition: opacity 0.3s;
-        opacity: 0.1;
-        &:hover {
-          opacity: 1;
+        background-color: black;
+
+        & > img {
+          transition: opacity 0.3s;
+          opacity: 0.1;
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }

@@ -1,0 +1,36 @@
+name: Release to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Prepare deploy folder
+        run: |
+          mkdir -p ./release
+          for file in **/*.user.css; do
+            mkdir -p "./release/$(dirname "${file}")"
+            cp "$file" "./release/$(dirname "${file}")"
+          done
+
+      # https://github.com/marketplace/actions/github-pages-action
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: release
+          publish_dir: ./release
+          cname: stylus-usercss.flandre.tw
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message }}

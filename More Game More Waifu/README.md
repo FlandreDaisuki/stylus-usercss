@@ -2,7 +2,7 @@
 
 [en](./README.md) | [zh](./README.zh.md)
 
-[<img src="../download-icon.svg" width="48" alt="download">](https://raw.githubusercontent.com/FlandreDaisuki/stylus-usercss/master/More%20Game%20More%20Waifu/more-game-more-waifu.user.css)
+[<img src="../download-icon.svg" width="48" alt="download">](https://stylus-usercss.flandre.tw/More%20Game%20More%20Waifu/more-game-more-waifu.user.css)
 
 ## Easy "Purchasing" of Free Games
 

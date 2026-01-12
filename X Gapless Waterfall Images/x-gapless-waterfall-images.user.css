@@ -1,0 +1,37 @@
+/* ==UserStyle==
+@name           X Gapless Waterfall Images
+@namespace      https://l.flandre.tw/github/stylus-usercss
+@version        1.0.0
+@description    Remove the gap between waterfall layout images
+@author         FlandreDaisuki<github@flandre.tw>
+@updateURL      https://stylus-usercss.flandre.tw/X%20Gapless%20Waterfall%20Images/x-gapless-waterfall-images.user.css
+==/UserStyle== */
+@-moz-document domain("x.com") {
+  div.css-175oi2r.r-6koalj.r-6gpygo.r-1s2bzr4 + span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3:has(> span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3):has(+ div.css-175oi2r.r-6koalj.r-6gpygo.r-1s2bzr4) {
+    display: none;
+  }
+
+  [data-testid="tweetText"] > div.css-175oi2r.r-6koalj.r-6gpygo.r-1s2bzr4 {
+    margin: 0;
+
+    div.r-rs99b7 {
+      border-width: 0;
+    }
+
+    div.r-1867qdf {
+      border-radius: 0;
+    }
+
+    &:first-of-type div.r-1867qdf {
+      border-radius: 16px 16px 0 0;
+    }
+
+    &:last-of-type div.r-1867qdf {
+      border-radius: 0 0 16px 16px;
+    }
+
+    [data-testid="tweetPhoto"].r-agouwx {
+      transform: none;
+    }
+  }
+}

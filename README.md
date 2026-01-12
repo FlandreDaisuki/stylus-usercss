@@ -6,6 +6,7 @@
 - [List](#list)
   - [More Game More Waifu](#more-game-more-waifu)
   - [FaceBullshit](#facebullshit)
+  - [X Gapless Waterfall Images](#x-gapless-waterfall-images)
 
 ## How to Install and Use
 
@@ -23,3 +24,7 @@ Some styles include configurable CSS options. To access them, click the ![stylus
 ### FaceBullshit
 
 [Details](./FaceBullshit/README.md)
+
+### X Gapless Waterfall Images
+
+[Details](./X%20Gapless%20Waterfall%20Images/README.md)

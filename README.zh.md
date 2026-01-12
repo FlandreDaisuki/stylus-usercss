@@ -6,6 +6,7 @@
 - [列表](#列表)
   - [More Game More Waifu](#more-game-more-waifu)
   - [FaceBullshit](#facebullshit)
+  - [X Gapless Waterfall Images](#x-gapless-waterfall-images)
 
 ## 使用+安裝方法
 
@@ -23,3 +24,7 @@
 ### FaceBullshit
 
 [詳細](./FaceBullshit/README.zh.md)
+
+### X Gapless Waterfall Images
+
+[詳細](./X%20Gapless%20Waterfall%20Images/README.zh.md)

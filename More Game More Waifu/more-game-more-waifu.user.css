@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.9
+@version        1.0.10
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @updateURL      https://stylus-usercss.flandre.tw/More%20Game%20More%20Waifu/more-game-more-waifu.user.css
@@ -45,13 +45,13 @@
 
     & > div#left {
       order: 1;
-      flex: var(--two-column-layout-left-width);
+      max-width: var(--two-column-layout-left-width);
       margin-left: var(--two-column-layout-side-margin);
     }
 
     & > div#wrapper {
       order: 2;
-      flex: calc(100% - var(--two-column-layout-left-width) - var(--two-column-layout-gap) - 15px * 2);
+      max-width: calc(100% - var(--two-column-layout-left-width) - var(--two-column-layout-gap) - 15px * 2);
       margin: 0 var(--two-column-layout-side-margin) 0 0;
 
       div#main_inner {

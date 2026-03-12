@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           More Game More Waifu
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        1.0.11
+@version        1.0.12
 @description    Make me buy games on dlsite easily
 @author         FlandreDaisuki<github@flandre.tw>
 @updateURL      https://stylus-usercss.flandre.tw/More%20Game%20More%20Waifu/more-game-more-waifu.user.css
@@ -18,11 +18,11 @@
     --bg-checkerboard: conic-gradient( white 0.25turn, black 0.25turn 0.5turn, white 0.5turn 0.75turn, black 0.75turn) top left / 1rem 1rem repeat;
   }
 
-  /* #region Fix DLSite floating layout */
   * {
     user-select: auto !important;
   }
 
+  /* #region Fix DLSite floating layout */
   div#container:has(div#ranking_wrapper):not(:has(div.ranking_top_container)),
   div#container:has(div#search_result_list),
   div#container > div.campaign_container,
@@ -98,14 +98,14 @@
     }
 
     if (obscureAnimation) {
-      a.work_thumb_box:has(+ .work_category.type_MOV) {
+      div.work_thumb_box:has(+ .work_category.type_MOV) {
         background-color: black;
 
         &::before {
           background-color: black;
         }
 
-        & > img {
+        & > div.container:has(a > picture) {
           transition: opacity 0.3s;
           opacity: 0.2;
 
@@ -193,14 +193,14 @@
     }
 
     if (obscureAnimation) {
-      a.work_thumb_inner:has(+ .work_category.type_MOV) {
+      div.work_thumb_inner:has(+ .work_category.type_MOV) {
         background-color: black;
 
         &::before {
           background-color: black;
         }
 
-        & > img {
+        & > div.container:has(a > picture) {
           transition: opacity 0.3s;
           opacity: 0.2;
 
@@ -330,10 +330,10 @@
     }
 
     if (obscureAnimation) {
-      li.search_result_img_box_inner:has(div.work_category.type_MOV) a.work_thumb_inner {
+      li.search_result_img_box_inner:has(div.work_category.type_MOV) div.work_thumb_inner {
         background-color: black;
 
-        & > img {
+        & > div:has(a > picture) {
           transition: opacity 0.3s;
           opacity: 0.2;
 

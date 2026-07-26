@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           FaceBullshit
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        4.0.3
+@version        4.0.4
 @description    Beautify Facebook 2025 layout
 @author         FlandreDaisuki<github@flandre.tw>
 @license        CC-BY-SA-4.0
@@ -36,7 +36,8 @@
   }
 
   /* 右側欄 Sponsored */
-  [role="complementary"] div:has( + [data-thumb] + [data-thumb]) div:first-child:not([class]):has( + [data-visualcompletion="ignore-dynamic"]) {
+  [role="complementary"] div:has( + [data-thumb] + [data-thumb]) div:first-child:not([class]):has( + [data-visualcompletion="ignore-dynamic"]),
+  [role="complementary"] div[data-visualcompletion="ignore-late-mutation"]:has([data-visualcompletion="ignore-dynamic"] a img[data-imgperflogname="feeclImage"]) {
     display: none;
   }
 

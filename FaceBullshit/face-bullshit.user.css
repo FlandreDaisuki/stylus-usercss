@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           FaceBullshit
 @namespace      https://l.flandre.tw/github/stylus-usercss
-@version        4.0.4
+@version        4.0.5
 @description    Beautify Facebook 2025 layout
 @author         FlandreDaisuki<github@flandre.tw>
 @license        CC-BY-SA-4.0
@@ -74,13 +74,8 @@
   }
 
   if (hide-non-followed-posts) {
-    /* 未追蹤貼文 */
-    [aria-posinset]:has(h4 > span:not([class]) > span:not([class]) [role="button"]) {
-      display:none;
-    }
-
-    /* 未加入社團 */
-    [aria-posinset]:has(h4 [role="button"] [role="none"]) {
+    /* 未追蹤粉專或未加入社團的推薦貼文 */
+    [aria-posinset]:has(h4 [role="button"]) {
       display: none;
     }
   }
